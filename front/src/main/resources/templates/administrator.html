@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login page</title>
+    <link th:href="@{/css/login1.css}" rel="stylesheet"/>
+</head>
+<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select User Type</title>
+    <script>
+        function setUserType(userType) {
+            window.location.href = `/createUser?userType=${userType}`;
+        }
+    </script>
+</head>
+<body>
+<button type="button" onclick="setUserType('clinician')">Clinician</button>
+<button type="button" onclick="setUserType('parent')">Parent</button>
+<button type="button" onclick="setUserType('children')">Children</button>
+</body>
+</html>
+</body>
+</html>
