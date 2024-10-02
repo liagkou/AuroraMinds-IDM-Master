@@ -153,7 +153,8 @@ public class OidcController {
         if("admin".equals(adminValid.getName()) && "1234".equals(adminValid.getPassword())){
             model.addAttribute("username", adminValid.getName());
             model.addAttribute("password", adminValid.getPassword());
-            return "redirect:/administrator";
+//            return "redirect:/administrator";
+            return "redirect:/createUser";
         }else {
             model.addAttribute("error", true);
             return "administratorValidation";

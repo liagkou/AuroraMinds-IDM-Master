@@ -25,9 +25,9 @@
       </div>
       <div><label class="title">Details Account</label></div>
 
-      <!-- Clinician Form -->
+      <!-- User Form -->
       <div id="clinician" class="form-container">
-        <h3><span style="font-size: 15px; color: blue; font-family: 'Times New Roman';">Please insert the information of the Clinician</span></h3>
+        <h3><span style="font-size: 15px; color: blue; font-family: 'Times New Roman';">Please insert the information of the user</span></h3>
         <form th:action="@{/createUser}" method="post" th:object="${clinicianUserRequest}">
           <div class="label_container">
             <label class="label" for="firstName">First Name</label>
@@ -62,17 +62,28 @@
           </div>
 
           <div class="label_container">
-            <label class="label" for="clinicianId">Clinician ID</label>
+            <label class="label" for="clinicianId">User ID</label>
           </div>
           <input type="text" id="clinicianId" name="clinicianId" class="form-control" th:field="*{nickname}"/>
           <div class="error_container">
             <span class="error" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
           </div>
 
+<!--          <div class="label_container">-->
+<!--            <label class="label" for="user_role">Role</label>-->
+<!--          </div>-->
+<!--          <input type="text" id="user_role" name="user_role" class="form-control" th:field="*{given_name}"/>-->
+<!--          <div class="error_container">-->
+<!--            <span class="error" th:if="${#fields.hasErrors('given_name')}" th:errors="*{given_name}"></span>-->
+<!--          </div>-->
+
           <div class="label_container">
             <label class="label" for="user_role">Role</label>
           </div>
-          <input type="text" id="user_role" name="user_role" class="form-control" th:field="*{given_name}"/>
+          <select id="user_role" name="given_name" class="form-control" th:field="*{given_name}">
+            <option value="Clinician">Clinician</option>
+            <option value="Parent">Parent</option>
+          </select>
           <div class="error_container">
             <span class="error" th:if="${#fields.hasErrors('given_name')}" th:errors="*{given_name}"></span>
           </div>
@@ -104,140 +115,25 @@
           </div>
 
           <div class="button_container">
-            <input class="button" type="submit" value="Insert Clinician in DB"/>
+            <input class="button" type="submit" value="Insert User in DB"/>
           </div>
         </form>
       </div>
 
-<!--      &lt;!&ndash; Parent Form &ndash;&gt;-->
-<!--      <div id="parent" class="form-container">-->
-<!--        <h3><span style="font-size: 15px; color: blue; font-family: 'Times New Roman';">Please insert the information of the Parent</span></h3>-->
-<!--        <form th:action="@{/createParent}" method="post" th:object="${parentUserRequest}">-->
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="parent_firstName">First Name</label>-->
-<!--          </div>-->
-<!--          <input type="text" id="parent_firstName" name="parent_firstName" class="form-control" th:field="*{firstName}"/>-->
-<!--          <div class="error_container">-->
-<!--            <span class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>-->
-<!--          </div>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="parent_lastName">Last Name</label>-->
-<!--          </div>-->
-<!--          <input type="text" id="parent_lastName" name="parent_lastName" class="form-control" th:field="*{lastName}"/>-->
-<!--          <div class="error_container">-->
-<!--            <span class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>-->
-<!--          </div>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="parent_birthdate">Birth Date</label>-->
-<!--          </div>-->
-<!--          <input type="date" id="parent_birthdate" name="parent_birthdate" class="form-control" th:field="*{birthdate}"/>-->
-<!--          <div class="error_container">-->
-<!--            <span class="error" th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}"></span>-->
-<!--          </div>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="parent_email">Email</label>-->
-<!--          </div>-->
-<!--          <input type="email" id="parent_email" name="parent_email" class="form-control" th:field="*{middle_name}"/>-->
-<!--          <div class="error_container">-->
-<!--            <span class="error" th:if="${#fields.hasErrors('middle_name')}" th:errors="*{middle_name}"></span>-->
-<!--          </div>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="gender">Child's Name</label>-->
-<!--          </div>-->
-<!--          <input type="email" id="gender" name="gender" class="form-control" th:field="*{middle_name}"/>-->
-<!--          <div class="error_container">-->
-<!--            <span class="error" th:if="${#fields.hasErrors('middle_name')}" th:errors="*{middle_name}"></span>-->
-<!--          </div>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="parent_id">Child's Name</label>-->
-<!--          </div>-->
-<!--          <input type="email" id="parent_id" name="parent_id" class="form-control" th:field="*{parent_id}"/>-->
-<!--          <div class="error_container">-->
-<!--            <span class="error" th:if="${#fields.hasErrors('parent_id')}" th:errors="*{nickname}"></span>-->
-<!--          </div>-->
-
-<!--          <h3><span style="font-size: 15px; color: darkred; font-family: 'Times New Roman';">Configuring Password</span></h3>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="parent_username">Username</label>-->
-<!--          </div>-->
-<!--          <input type="text" id="parent_username" name="username" class="form-control"/>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="parent_password">Password</label>-->
-<!--          </div>-->
-<!--          <input type="password" id="parent_password" name="password" class="form-control"/>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="parent_password_check">Confirm Password</label>-->
-<!--          </div>-->
-<!--          <input type="password" id="parent_password_check" name="password_check" class="form-control"/>-->
-
-<!--          <div class="button_container">-->
-<!--            <input class="button" type="submit" value="Insert Parent in DB"/>-->
-<!--          </div>-->
-<!--        </form>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; Children Form &ndash;&gt;-->
-<!--      <div id="children" class="form-container">-->
-<!--        <h3><span style="font-size: 15px; color: blue; font-family: 'Times New Roman';">Please insert the information of the Child</span></h3>-->
-<!--        <form action="/submitUser" method="post">-->
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="children_firstName">First Name</label>-->
-<!--          </div>-->
-<!--          <input type="text" id="children_firstName" name="firstName" class="form-control"/>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="children_lastName">Last Name</label>-->
-<!--          </div>-->
-<!--          <input type="text" id="children_lastName" name="lastName" class="form-control"/>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="children_parentName">Parent's Name</label>-->
-<!--          </div>-->
-<!--          <input type="text" id="children_parentName" name="parentName" class="form-control"/>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="children_birthdate">Birth Date</label>-->
-<!--          </div>-->
-<!--          <input type="date" id="children_birthdate" name="birthdate" class="form-control"/>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="children_email">Email</label>-->
-<!--          </div>-->
-<!--          <input type="email" id="children_email" name="email" class="form-control"/>-->
-
-<!--          <h3><span style="font-size: 15px; color: darkred; font-family: 'Times New Roman';">Configuring Password</span></h3>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="children_username">Username</label>-->
-<!--          </div>-->
-<!--          <input type="text" id="children_username" name="username" class="form-control"/>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="children_password">Password</label>-->
-<!--          </div>-->
-<!--          <input type="password" id="children_password" name="password" class="form-control"/>-->
-
-<!--          <div class="label_container">-->
-<!--            <label class="label" for="children_password_check">Confirm Password</label>-->
-<!--          </div>-->
-<!--          <input type="password" id="children_password_check" name="password_check" class="form-control"/>-->
-
-<!--          <div class="button_container">-->
-<!--            <input class="button" type="submit" value="Insert Child in DB"/>-->
-<!--          </div>-->
-<!--        </form>-->
-<!--      </div>-->
     </div>
   </div>
 </div>
 
 </body>
 </html>
+
+
+<!--<script>-->
+<!--        function log()-->
+<!--        {-->
+<!--          console.log(user_role);-->
+
+<!--          const selectedRole = document.getElementById('user_role').value;-->
+<!--          console.log(selectedRole); // Logs only "Clinician" or "Parent"-->
+<!--        };-->
+<!--</script>-->
