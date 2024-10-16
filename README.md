@@ -58,6 +58,8 @@ This will start demonstrators using ports 9080-9082(plain HTTP) and 9090-9092(TL
 
 # Aurora Minds videos
 
+Aurora App
 https://www.youtube.com/watch?v=NKtMDcRgwh0
 
+Wallet Verifier
 https://www.youtube.com/watch?v=RaYKUoo4Crs
