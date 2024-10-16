@@ -55,3 +55,9 @@ To launch a test vIdP comprised of three partial IdPs run:
 >cfp-usecase> java -jar target/CFP-IdP-jar-with-dependencies.jar src/test/resources/setup2.json
 
 This will start demonstrators using ports 9080-9082(plain HTTP) and 9090-9092(TLS). Using the tests 'cfp-usecase.TestFlow.testPabcRunning()' and 'cfp-usecase.TestFlow.testPabcRunning()', you can execute a simple flow (taking the user role and also verifying the results).
+
+# Aurora Minds videos
+
+https://www.youtube.com/watch?v=NKtMDcRgwh0
+
+https://www.youtube.com/watch?v=RaYKUoo4Crs
